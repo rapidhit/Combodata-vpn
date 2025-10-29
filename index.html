@@ -3,31 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download App – Official</title>
-    <meta name="description" content="Download our official app for Android and iOS. Secure, fast, and trusted by millions.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Download App</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        :root {
-            --primary-blue: #2563eb;
-            --primary-blue-dark: #1d4ed8;
-            --android-green: #3ddc84;
-            --ios-blue: #007aff;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-900: #111827;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-            --radius-lg: 12px;
-            --radius-xl: 16px;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -35,251 +14,154 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafc;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 24px;
-            color: var(--gray-700);
-            line-height: 1.6;
         }
 
-        .container {
+        .card {
             background: white;
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-xl);
-            padding: 48px 40px;
-            max-width: 520px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            padding: 40px 32px;
+            max-width: 460px;
             width: 100%;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), #3b82f6);
-        }
-
-        .logo-placeholder {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--primary-blue), #3b82f6);
-            border-radius: 14px;
-            margin: 0 auto 24px;
+        .logo {
+            width: 48px;
+            height: 48px;
+            background: #2563eb;
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+            border-radius: 12px;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-md);
         }
 
         h1 {
-            font-size: 1.875rem;
+            font-size: 1.75rem;
             font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 12px;
-            letter-spacing: -0.025em;
+            color: #1e293b;
+            margin-bottom: 8px;
         }
 
-        .subtitle {
-            color: var(--gray-600);
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-            max-width: 420px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .device-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        p {
+            color: #64748b;
+            font-size: 1rem;
             margin-bottom: 32px;
         }
 
-        .device-card {
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            border-radius: var(--radius-lg);
-            padding: 32px 24px;
-            cursor: pointer;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
         }
 
-        .device-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+        .btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            background: #f8fafc;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             border-color: transparent;
         }
 
-        .device-card.android:hover {
+        .btn.android:hover {
             background: #f0fdf4;
-            border-color: var(--android-green);
+            border-color: #22c55e;
         }
 
-        .device-card.ios:hover {
+        .btn.ios:hover {
             background: #f0f5ff;
-            border-color: var(--ios-blue);
+            border-color: #3b82f6;
         }
 
-        .device-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
-            display: block;
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
         }
 
-        .android .device-icon {
-            color: var(--android-green);
+        .android .icon { color: #22c55e; }
+        .ios .icon { color: #3b82f6; }
+
+        .label {
+            font-size: 1.1rem;
+            color: #1e293b;
+            margin-bottom: 4px;
         }
 
-        .ios .device-icon {
-            color: var(--ios-blue);
-        }
-
-        .device-label {
-            font-weight: 600;
-            font-size: 1.125rem;
-            color: var(--gray-900);
-            margin-bottom: 6px;
-        }
-
-        .store-text {
+        .store {
             font-size: 0.875rem;
-            color: var(--gray-600);
+            color: #64748b;
             font-weight: 500;
         }
 
-        .device-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: transparent;
-            transition: background 0.3s ease;
-        }
-
-        .android::after {
-            background: linear-gradient(to right, #86efac, var(--android-green));
-        }
-
-        .ios::after {
-            background: linear-gradient(to right, #60a5fa, var(--ios-blue));
-        }
-
-        .security-notice {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            color: var(--gray-600);
-            font-size: 0.875rem;
+        .footer {
             margin-top: 28px;
-        }
-
-        .security-notice i {
-            color: #10b981;
-            font-size: 1rem;
-        }
-
-        .footer-links {
-            margin-top: 32px;
-            padding-top: 24px;
-            border-top: 1px solid var(--gray-200);
-            display: flex;
-            justify-content: center;
-            gap: 24px;
+            color: #94a3b8;
             font-size: 0.875rem;
         }
 
-        .footer-links a {
-            color: var(--gray-600);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-blue);
-        }
-
-        @media (max-width: 640px) {
-            .container {
-                padding: 40px 24px;
-                margin: 16px;
-            }
-
-            .device-grid {
+        @media (max-width: 480px) {
+            .buttons {
                 grid-template-columns: 1fr;
             }
-
-            .device-card {
-                padding: 28px 20px;
-            }
-
-            h1 {
-                font-size: 1.75rem;
+            .card {
+                padding: 32px 24px;
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="logo-placeholder">A</div>
-        
-        <h1>Download the Official App</h1>
-        <p class="subtitle">Choose your platform to get the latest version securely from official stores.</p>
-        
-        <div class="device-grid">
-            <div class="device-card android" onclick="downloadApp('android')">
-                <span class="device-icon">
-                    <i class="fab fa-android"></i>
-                </span>
-                <div class="device-label">Android</div>
-                <div class="store-text">Google Play Store</div>
+    <div class="card">
+        <div class="logo">A</div>
+        <h1>Download App</h1>
+        <p>Select your device to download</p>
+
+        <div class="buttons">
+            <div class="btn android" onclick="download('android')">
+                <i class="fab fa-android icon"></i>
+                <div class="label">Android</div>
+                <div class="store">Google Play</div>
             </div>
-            
-            <div class="device-card ios" onclick="downloadApp('ios')">
-                <span class="device-icon">
-                    <i class="fab fa-apple"></i>
-                </span>
-                <div class="device-label">iOS</div>
-                <div class="store-text">Apple App Store</div>
+            <div class="btn ios" onclick="download('ios')">
+                <i class="fab fa-apple icon"></i>
+                <div class="label">iOS</div>
+                <div class="store">App Store</div>
             </div>
         </div>
 
-        <div class="security-notice">
-            <i class="fas fa-shield-alt"></i>
-            <span>Secure • Verified • Official Release</span>
-        </div>
-
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Support</a>
+        <div class="footer">
+            Secure • Free • Official
         </div>
     </div>
 
     <script>
-        function downloadApp(platform) {
+        function download(platform) {
             const links = {
-                android: 'https://play.google.com/store/apps/details?id=com.yourcompany.yourapp',
+                android: 'https://play.google.com/store/apps/details?id=com.yourapp',
                 ios: 'https://apps.apple.com/app/id123456789'
             };
-            
             window.location.href = links[platform];
         }
     </script>
